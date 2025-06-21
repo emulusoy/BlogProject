@@ -8,11 +8,11 @@ namespace BlogProject.DataAccessLayer.Abstract
 {
     public interface IGenericDal<T> where T : class
     {
-        void TInsert(T entity);
-        void TUpdate(T entity);
-        void TDelete(int id);
-        List<T> TGetListAll();
-        T TGetById(int id);
+        void Insert(T entity);
+        void Update(T entity);
+        void Delete(int id);
+        List<T> GetListAll();
+        T GetById(int id);
   
 
     }
