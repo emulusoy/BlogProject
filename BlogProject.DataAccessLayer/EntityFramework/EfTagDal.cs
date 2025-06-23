@@ -14,6 +14,7 @@ namespace BlogProject.DataAccessLayer.EntityFramework
     {
         public EfTagDal(BlogContext context) : base(context)
         {
+
         }
     }
 }
