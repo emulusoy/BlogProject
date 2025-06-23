@@ -8,11 +8,11 @@ using BlogProject.DataAccessLayer.Context;
 
 namespace BlogProject.DataAccessLayer.Repositories
 {
-    public class GenericService<T> : IGenericDal<T> where T : class
+    public class GenericRepository<T> : IGenericDal<T> where T : class
     {
         private readonly BlogContext _context;
 
-        public GenericService(BlogContext context)
+        public GenericRepository(BlogContext context)
         {
             _context = context;
         }
