@@ -43,7 +43,7 @@ namespace BlogProject.BusinessLayer.Concrete
             if (entity.Title != null && entity.Title.Length>10 && entity.CategoryId !=0 && entity.Content.Length <=100)
             {
                 _articleDal.Insert(entity);
-            }
+            } 
           
         }
 
