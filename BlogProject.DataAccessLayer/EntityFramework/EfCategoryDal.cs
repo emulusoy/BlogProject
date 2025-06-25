@@ -17,8 +17,15 @@ namespace BlogProject.DataAccessLayer.EntityFramework
     //kategoriye ozel islemler icin icategorydal interface'ini implement ettik.
 
     {
+        private readonly BlogContext _context;
         public EfCategoryDal(BlogContext context) : base(context)
         {
+            _context = context;
+        }
+
+        public int GetCategoryCount()
+        {
+            return _context.Categories.Count(); 
         }
     }
 }

@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using BlogProject.EntityLayer.Entities;
 
-namespace BlogProject.DataAccessLayer.Abstract
+namespace BlogProject.BusinessLayer.Abstract
 {
-    public interface ICategoryDal:IGenericDal<Category>
+    public interface ITagService:IGenericService<Tag>
     {
-        int GetCategoryCount();
     }
 }

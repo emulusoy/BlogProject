@@ -12,8 +12,16 @@ namespace BlogProject.DataAccessLayer.EntityFramework
 {
     public class EfArticleDal : GenericRepository<Article>, IArticleDal
     {
+        private readonly BlogContext _context;  
         public EfArticleDal(BlogContext context) : base(context)
         {
+            _context = context;
+        }
+
+        public List<Article> GetArticleByCategoryId1()
+        {
+            var values =_context.Articles.Where(x=>x.CategoryId == 1).ToList();
+            return values;
         }
     }
 }
