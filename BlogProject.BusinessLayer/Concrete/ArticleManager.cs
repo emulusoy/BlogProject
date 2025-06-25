@@ -25,7 +25,7 @@ namespace BlogProject.BusinessLayer.Concrete
 
         public List<Article> TGetArticleByCategoryId1()
         {
-            return _articleDal.GetArticleByCategoryId1();
+            return _articleDal.GetArticleByCategoryId1(); 
         }
 
         public Article TGetById(int id)
