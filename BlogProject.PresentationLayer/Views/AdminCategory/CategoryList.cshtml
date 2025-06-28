@@ -1,0 +1,35 @@
+﻿@model List<Category>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>###</th>
+            <th>Category Name</th>
+            <th>Edit</th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    
+                    <a class="btn btn-outline-secondary" href="/AdminCategory/DeleteCategory">Delete</a>
+                    <a class="btn btn-outline-danger" href="/AdminCategory/UpdateCategory">Update</a>
+                </td>
+            </tr>
+        }
+        
+    </table>
+    <a class="btn btn-outline-primary" href="/AdminCategory/CreateCategory">Create New Category</a>
+
+</div>
+

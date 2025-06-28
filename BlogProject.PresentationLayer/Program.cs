@@ -1,8 +1,20 @@
+using BlogProject.BusinessLayer.Abstract;
+using BlogProject.BusinessLayer.Concrete;
+using BlogProject.DataAccessLayer.Abstract;
+using BlogProject.DataAccessLayer.Context;
+using BlogProject.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
+builder.Services.AddScoped<ISliderService, SliderManager>();
+builder.Services.AddScoped<ISliderDal, EfSliderDal>();
+
+builder.Services.AddScoped<BlogContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -12,6 +12,12 @@ namespace BlogProject.BusinessLayer.Concrete
     public class SliderManager : ISliderService
     {
         private readonly ISliderDal _sliderDal;
+
+        public SliderManager(ISliderDal sliderDal)
+        {
+            _sliderDal = sliderDal;
+        }
+
         public void TDelete(int id)
         {
             _sliderDal.Delete(id);
