@@ -14,6 +14,9 @@ builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ISliderService, SliderManager>();
 builder.Services.AddScoped<ISliderDal, EfSliderDal>();
 
+builder.Services.AddScoped<IArticleService, ArticleManager>();
+builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+
 builder.Services.AddScoped<BlogContext>();
 var app = builder.Build();
 
