@@ -12,6 +12,12 @@ namespace BlogProject.BusinessLayer.Concrete
     public class CommentManager : ICommentService
     {
         private readonly ICommentDal _commentDal;
+
+        public CommentManager(ICommentDal commentDal)
+        {
+            _commentDal = commentDal;
+        }
+
         public void TDelete(int id)
         {
             _commentDal.Delete(id);

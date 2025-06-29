@@ -12,6 +12,12 @@ namespace BlogProject.BusinessLayer.Concrete
     public class TagManager : ITagService
     {
         private readonly ITagDal _tagDal;
+
+        public TagManager(ITagDal tagDal)
+        {
+            _tagDal = tagDal;
+        }
+
         public void TDelete(int id)
         {
             _tagDal.Delete(id);

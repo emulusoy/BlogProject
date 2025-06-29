@@ -27,14 +27,18 @@ namespace BlogProject.DataAccessLayer.EntityFramework
 
         public List<Article> GetArticleWithAppUser()
         {
-            var values=_context.Articles.Include(x => x.AppUser).ToList();
+            var values = _context.Articles.ToList();
             return values;
         }
 
         public List<Article> GetArticleWithCategories()
         {
-            var values = _context.Articles.Include(x => x.Category).ToList();
-            return values; 
+            return _context.Articles.Include(x => x.Category).ToList();
+        }
+
+        public List<Article> GetArticleWithCategoriesAndAppUsers()
+        {
+            return _context.Articles.Include(x => x.Category).Include(y => y.AppUser).ToList();
         }
     }
 }

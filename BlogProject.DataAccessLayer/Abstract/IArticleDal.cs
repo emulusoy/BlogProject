@@ -12,5 +12,6 @@ namespace BlogProject.DataAccessLayer.Abstract
        public List<Article> GetArticleByCategoryId1();//categori id si bir olan makale
         public List<Article> GetArticleWithAppUser();
         public List<Article> GetArticleWithCategories();
+        public List<Article> GetArticleWithCategoriesAndAppUsers();
     }
 }

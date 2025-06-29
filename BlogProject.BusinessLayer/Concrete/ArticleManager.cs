@@ -33,6 +33,16 @@ namespace BlogProject.BusinessLayer.Concrete
             return _articleDal.GetArticleWithAppUser();
         }
 
+        public List<Article> TGetArticleWithCategories()
+        {
+            return _articleDal.GetArticleWithCategories();
+        }
+
+        public List<Article> TGetArticleWithCategoriesAndAppUsers()
+        {
+           return _articleDal.GetArticleWithCategoriesAndAppUsers();
+        }
+
         public Article TGetById(int id)
         {
             return _articleDal.GetById(id);
@@ -51,7 +61,6 @@ namespace BlogProject.BusinessLayer.Concrete
             } 
           
         }
-
         public void TUpdate(Article entity)
         {
            _articleDal.Update(entity);  

@@ -12,7 +12,7 @@ namespace BlogProject.PresentationLayer.ViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            var values = _articleService.TGetArticleWithAppUser();
+            var values = _articleService.TGetArticleWithCategoriesAndAppUsers();
             return View(values);
         }
     }
