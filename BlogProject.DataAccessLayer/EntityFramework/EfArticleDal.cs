@@ -34,7 +34,7 @@ namespace BlogProject.DataAccessLayer.EntityFramework
         public List<Article> GetArticleWithCategories()
         {
             var values = _context.Articles.Include(x => x.Category).ToList();
-            return values;
+            return values; 
         }
     }
 }
