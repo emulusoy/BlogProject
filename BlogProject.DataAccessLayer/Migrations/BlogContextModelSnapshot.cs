@@ -111,10 +111,8 @@ namespace BlogProject.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArticleId"));
 
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId1")
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CategoryId")
@@ -141,7 +139,7 @@ namespace BlogProject.DataAccessLayer.Migrations
 
                     b.HasKey("ArticleId");
 
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("CategoryId");
 
@@ -366,7 +364,9 @@ namespace BlogProject.DataAccessLayer.Migrations
                 {
                     b.HasOne("BlogProject.EntityLayer.Entities.AppUser", "AppUser")
                         .WithMany("Articles")
-                        .HasForeignKey("AppUserId1");
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("BlogProject.EntityLayer.Entities.Category", "Category")
                         .WithMany("Articles")

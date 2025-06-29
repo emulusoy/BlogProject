@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20250628143609_mig2")]
-    partial class mig2
+    [Migration("20250629121009_mig1")]
+    partial class mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,10 +114,8 @@ namespace BlogProject.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArticleId"));
 
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId1")
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CategoryId")
@@ -144,7 +142,7 @@ namespace BlogProject.DataAccessLayer.Migrations
 
                     b.HasKey("ArticleId");
 
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("CategoryId");
 
@@ -369,7 +367,9 @@ namespace BlogProject.DataAccessLayer.Migrations
                 {
                     b.HasOne("BlogProject.EntityLayer.Entities.AppUser", "AppUser")
                         .WithMany("Articles")
-                        .HasForeignKey("AppUserId1");
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("BlogProject.EntityLayer.Entities.Category", "Category")
                         .WithMany("Articles")

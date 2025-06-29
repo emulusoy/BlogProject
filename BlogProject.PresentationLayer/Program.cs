@@ -3,6 +3,8 @@ using BlogProject.BusinessLayer.Concrete;
 using BlogProject.DataAccessLayer.Abstract;
 using BlogProject.DataAccessLayer.Context;
 using BlogProject.DataAccessLayer.EntityFramework;
+using BlogProject.EntityLayer.Entities;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,8 @@ builder.Services.AddScoped<IArticleService, ArticleManager>();
 builder.Services.AddScoped<IArticleDal, EfArticleDal>();
 
 builder.Services.AddScoped<BlogContext>();
+
+builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<BlogContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

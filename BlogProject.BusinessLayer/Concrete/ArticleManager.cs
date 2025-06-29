@@ -28,6 +28,11 @@ namespace BlogProject.BusinessLayer.Concrete
             return _articleDal.GetArticleByCategoryId1(); 
         }
 
+        public List<Article> TGetArticleWithAppUser()
+        {
+            return _articleDal.GetArticleWithAppUser();
+        }
+
         public Article TGetById(int id)
         {
             return _articleDal.GetById(id);
