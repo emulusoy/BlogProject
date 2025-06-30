@@ -16,7 +16,7 @@ namespace BlogProject.PresentationLayer.Controllers
 
         public IActionResult CategoryList()
         {
-            var values=_categoryService.TGetListAll();
+            var values=_categoryService.TGetListAll(); 
             return View(values);
         }
         [HttpGet]
