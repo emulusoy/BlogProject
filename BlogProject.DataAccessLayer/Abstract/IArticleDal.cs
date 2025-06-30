@@ -14,5 +14,7 @@ namespace BlogProject.DataAccessLayer.Abstract
         public List<Article> GetArticleWithCategories();
         public List<Article> GetArticleWithCategoriesAndAppUsers();
         Article  GetArticleWithAuthorAndCategoryById(int id);//yazarla birlikte
+
+        List<Article> GetArticleByAuthor(string id);//my articles list
     }
 }

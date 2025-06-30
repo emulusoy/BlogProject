@@ -19,6 +19,12 @@ namespace BlogProject.DataAccessLayer.EntityFramework
             _context = context;
         }
 
+        public List<Article> GetArticleByAuthor(string id)
+        {
+          var values = _context.Articles.Where(z => z.AppUserId == id).ToList();
+            return values;
+        }
+
         public List<Article> GetArticleByCategoryId1()
         {
             var values =_context.Articles.Where(x=>x.CategoryId == 1).ToList();

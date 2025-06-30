@@ -1,0 +1,23 @@
+﻿@model UserLoginViewModel
+
+
+@{
+    Layout = null;
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Username >?</label>
+        <input type="text" asp-for="UserName" class="form-control" />
+        <br />
+        <label>Password >?</label>
+        <input type="password" asp-for="Password" class="form-control" />
+        <br />
+        <button class="btn btn-info">Login</button>
+    </form>
+</div>
