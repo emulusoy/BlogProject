@@ -2,7 +2,6 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,56 +9,11 @@
 
 <body class="single-post-page">
 
-    <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container position-relative d-flex align-items-center justify-content-between">
-
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        
-                <h1 class="sitename">eMuBlog</h1>
-            </a>
-
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="single-post.html" class="active">Single Post</a></li>
-                    <li class="dropdown">
-                        <a href="#"><span>Categories</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-                            <li><a href="category.html">Category 1</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Dropdown 1</a></li>
-                                    <li><a href="#">Deep Dropdown 2</a></li>
-                                    <li><a href="#">Deep Dropdown 3</a></li>
-                                    <li><a href="#">Deep Dropdown 4</a></li>
-                                    <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="category.html">Category 2</a></li>
-                            <li><a href="category.html">Category 3</a></li>
-                            <li><a href="category.html">Category 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-
-            <div class="header-social-links">
-                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-
-        </div>
-    </header>
+    @await Component.InvokeAsync("_ArticleDetailNavbarComponentPartial")
 
     <main class="main">
 
-        <!-- Page Title -->
+        
         <div class="page-title">
             <div class="container d-lg-flex justify-content-between align-items-center">
                 <h1 class="mb-2 mb-lg-0">Single Post</h1>
@@ -70,14 +24,13 @@
                     </ol>
                 </nav>
             </div>
-        </div><!-- End Page Title -->
+        </div>
 
         <div class="container">
             <div class="row">
 
                 <div class="col-lg-8">
 
-                    <!-- Blog Details Section -->
                     <section id="blog-details" class="blog-details section">
                         <div class="container">
 
@@ -95,7 +48,7 @@
                                         <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
                                         <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
                                     </ul>
-                                </div><!-- End meta top -->
+                                </div>
 
                                 <div class="content">
                                     <p>
@@ -136,7 +89,7 @@
                                         Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
                                     </p>
 
-                                </div><!-- End post content -->
+                                </div>
 
                                 <div class="meta-bottom">
                                     <i class="bi bi-folder"></i>
@@ -150,13 +103,12 @@
                                         <li><a href="#">Tips</a></li>
                                         <li><a href="#">Marketing</a></li>
                                     </ul>
-                                </div><!-- End meta bottom -->
+                                </div>
 
                             </article>
 
                         </div>
-                    </section><!-- /Blog Details Section -->
-                    <!-- Blog Comments Section -->
+                    </section>
                     <section id="blog-comments" class="blog-comments section">
 
                         <div class="container">
@@ -175,7 +127,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div><!-- End comment #1 -->
+                            </div>
 
                             <div id="comment-2" class="comment">
                                 <div class="d-flex">
@@ -217,11 +169,11 @@
                                             </div>
                                         </div>
 
-                                    </div><!-- End comment reply #2-->
+                                    </div>
 
-                                </div><!-- End comment reply #1-->
+                                </div>
 
-                            </div><!-- End comment #2-->
+                            </div>
 
                             <div id="comment-3" class="comment">
                                 <div class="d-flex">
@@ -236,7 +188,7 @@
                                     </div>
                                 </div>
 
-                            </div><!-- End comment #3 -->
+                            </div>
 
                             <div id="comment-4" class="comment">
                                 <div class="d-flex">
@@ -250,12 +202,11 @@
                                     </div>
                                 </div>
 
-                            </div><!-- End comment #4 -->
+                            </div>
 
                         </div>
 
-                    </section><!-- /Blog Comments Section -->
-                    <!-- Comment Form Section -->
+                    </section>
                     <section id="comment-form" class="comment-form section">
                         <div class="container">
 
@@ -289,7 +240,7 @@
                             </form>
 
                         </div>
-                    </section><!-- /Comment Form Section -->
+                    </section>
 
                 </div>
 
@@ -297,7 +248,7 @@
 
                     <div class="widgets-container">
 
-                        <!-- Blog Author Widget -->
+                        
                         <div class="blog-author-widget widget-item">
 
                             <div class="d-flex flex-column align-items-center">
@@ -320,8 +271,7 @@
 
                             </div>
 
-                        </div><!--/Blog Author Widget -->
-                        <!-- Search Widget -->
+                        </div>
                         <div class="search-widget widget-item">
 
                             <h3 class="widget-title">Search</h3>
@@ -330,8 +280,7 @@
                                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                             </form>
 
-                        </div><!--/Search Widget -->
-                        <!-- Recent Posts Widget -->
+                        </div>
                         <div class="recent-posts-widget widget-item">
 
                             <h3 class="widget-title">Recent Posts</h3>
@@ -342,7 +291,7 @@
                                     <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
-                            </div><!-- End recent post item-->
+                            </div>
 
                             <div class="post-item">
                                 <img src="/Blog/assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
@@ -350,7 +299,7 @@
                                     <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
-                            </div><!-- End recent post item-->
+                            </div>
 
                             <div class="post-item">
                                 <img src="/Blog/assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
@@ -358,7 +307,7 @@
                                     <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
-                            </div><!-- End recent post item-->
+                            </div>
 
                             <div class="post-item">
                                 <img src="/Blog/assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
@@ -366,7 +315,7 @@
                                     <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
-                            </div><!-- End recent post item-->
+                            </div>
 
                             <div class="post-item">
                                 <img src="/Blog/assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
@@ -374,10 +323,9 @@
                                     <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
-                            </div><!-- End recent post item-->
+                            </div>
 
-                        </div><!--/Recent Posts Widget -->
-                        <!-- Tags Widget -->
+                        </div>
                         <div class="tags-widget widget-item">
 
                             <h3 class="widget-title">Tags</h3>
@@ -395,7 +343,7 @@
                                 <li><a href="#">Marketing</a></li>
                             </ul>
 
-                        </div><!--/Tags Widget -->
+                        </div>
 
                     </div>
 
