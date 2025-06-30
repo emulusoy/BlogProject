@@ -13,5 +13,6 @@ namespace BlogProject.BusinessLayer.Abstract
         public List<Article> TGetArticleWithAppUser();
         public List<Article> TGetArticleWithCategories();
         public List<Article> TGetArticleWithCategoriesAndAppUsers();
+        public Article TGetArticleWithAuthorAndCategoryById(int id);
     }
 }

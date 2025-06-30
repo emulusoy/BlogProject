@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlogProject.BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.PresentationLayer.ViewComponents.ArticleDetailViewComponents
 {
     public class _ArticleDetailCommentComponentPartial:ViewComponent
     {
-        public IViewComponentResult Invoke()
+        private readonly ICommentService _commentService;
+
+        public _ArticleDetailCommentComponentPartial(ICommentService commentService)
         {
-            return View();
+            _commentService = commentService;
+        }
+
+        public IViewComponentResult Invoke(int id)
+        {
+            var values = _commentService.TGetCommentsByArticleId(id);
+            return View(values);
         }
     }
 }

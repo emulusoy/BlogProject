@@ -22,7 +22,7 @@
                     @await Component.InvokeAsync("_ArticleDetailContentComponentPartial",new {id=ViewBag.Id})
 
                     @* d            comment! *@
-                    @await Component.InvokeAsync("_ArticleDetailCommentComponentPartial")
+                    @await Component.InvokeAsync("_ArticleDetailCommentComponentPartial", new { id = ViewBag.Id })
 
                     @* Add commentfrom *@
                     @await Component.InvokeAsync("_ArticleDetailAddCommentComponentPartial")

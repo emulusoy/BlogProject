@@ -31,6 +31,12 @@ namespace BlogProject.DataAccessLayer.EntityFramework
             return values;
         }
 
+        public Article GetArticleWithAuthorAndCategoryById(int id)
+        {
+            var values = _context.Articles.Include(x => x.Category).Include(y => y.AppUser).Where(z => z.ArticleId == id).FirstOrDefault();
+            return values;
+        }
+
         public List<Article> GetArticleWithCategories()
         {
             return _context.Articles.Include(x => x.Category).ToList();

@@ -1,22 +1,25 @@
-﻿<section id="blog-comments" class="blog-comments section">
+﻿@model List<Comment>
+<section id="blog-comments" class="blog-comments section">
 
     <div class="container">
 
-        <h4 class="comments-count">8 Comments</h4>
-
-        <div id="comment-1" class="comment">
-            <div class="d-flex">
-                <div class="comment-img"><img src="/Blog/assets/img/blog/comments-1.jpg" alt=""></div>
-                <div>
-                    <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
-                    <p>
-                        Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
-                        Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                    </p>
+        <h4 class="comments-count">@Model.Count Comments</h4>
+        @foreach (var item in Model)
+        {
+            <div id="comment-1" class="comment">
+                <div class="d-flex">
+                    <div class="comment-img"><img src="@item.AppUser.ImageUrl" alt=""></div>
+                    <div>
+                        <h5><a href="">@item.AppUser.Name @item.AppUser.Surname</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                        <time datetime="2020-01-01">@item.CommentDate.ToString("dd-MMM-yy")</time>
+                        <p>
+                            @item.CommentDetail
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+       
     </div>
 
 </section>

@@ -14,7 +14,7 @@ namespace BlogProject.PresentationLayer.ViewComponents.ArticleDetailViewComponen
 
         public IViewComponentResult Invoke(int id)
         {
-            var value=_articleService.TGetById(id);
+            var value=_articleService.TGetArticleWithAuthorAndCategoryById(id);
             return View(value);
         }
     } 

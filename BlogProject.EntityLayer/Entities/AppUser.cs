@@ -16,5 +16,6 @@ namespace BlogProject.EntityLayer.Entities
         public string Description { get; set; }
 
         public List<Article> Articles { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }
