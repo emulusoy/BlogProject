@@ -14,7 +14,7 @@ namespace BlogProject.PresentationLayer.Controllers
 
         public IActionResult ArticleDetail(int id)
         {
-            ViewBag.Id = id;
+            ViewBag.id = id;
             return View();
         }
     }

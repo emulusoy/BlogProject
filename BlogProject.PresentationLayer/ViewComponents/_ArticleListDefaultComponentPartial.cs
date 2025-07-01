@@ -1,19 +1,38 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BlogProject.BusinessLayer.Abstract;
+﻿using BlogProject.BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
-namespace BlogProject.PresentationLayer.ViewComponents
+public class _ArticleListDefaultComponentPartial : ViewComponent
 {
-    public class _ArticleListDefaultComponentPartial : ViewComponent
+    private readonly IArticleService _articleService;
+
+    public _ArticleListDefaultComponentPartial(IArticleService articleService)
     {
-        private readonly IArticleService _articleService;
-        public _ArticleListDefaultComponentPartial(IArticleService articleService)
+        _articleService = articleService;
+    }
+
+    public IViewComponentResult Invoke()
+    {
+        int page = 1;
+
+        if (HttpContext.Request.Query.ContainsKey("page"))
         {
-            _articleService = articleService;
+            int.TryParse(HttpContext.Request.Query["page"], out page);
+            if (page <= 0) page = 1;
         }
-        public IViewComponentResult Invoke()
-        {
-            var values = _articleService.TGetArticleWithCategoriesAndAppUsers();
-            return View(values);
-        }
+
+        int pageSize = 9;
+        var allArticles = _articleService.TGetArticleWithCategoriesAndAppUsers()
+                                         .OrderByDescending(x => x.CreatedDate)
+                                         .ToList();
+
+        var paginatedArticles = allArticles
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        ViewBag.CurrentPage = page;
+        ViewBag.TotalPages = (int)Math.Ceiling((double)allArticles.Count / pageSize);
+
+        return View(paginatedArticles);
     }
 }

@@ -21,5 +21,6 @@ namespace BlogProject.EntityLayer.Entities
         public AppUser AppUser { get; set; }
 
         public List<Comment> Comments { get; set; }
+
     }
 }
