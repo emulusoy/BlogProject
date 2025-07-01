@@ -18,5 +18,7 @@ namespace BlogProject.EntityLayer.Entities
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 
+        public bool IsToxic { get; set; }
+
     }
 }

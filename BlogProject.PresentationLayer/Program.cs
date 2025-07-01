@@ -25,6 +25,8 @@ builder.Services.AddScoped<ITagDal, EfTagDal>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
 builder.Services.AddScoped<ICommentDal, EfCommentDal>();
 
+builder.Services.AddScoped<IToxicityService, ToxicityManager>();
+
 builder.Services.AddScoped<BlogContext>();
 
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<BlogContext>();

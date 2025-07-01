@@ -4,7 +4,7 @@ namespace BlogProject.PresentationLayer.ViewComponents.ArticleDetailViewComponen
 {
     public class _ArticleDetailAddCommentComponentPartial:ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int id)
         {
             return View();
         }

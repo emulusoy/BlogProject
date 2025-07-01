@@ -183,6 +183,9 @@ namespace BlogProject.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsToxic")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
 

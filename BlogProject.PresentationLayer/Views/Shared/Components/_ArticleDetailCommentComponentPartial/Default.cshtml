@@ -1,25 +1,45 @@
-﻿@model List<Comment>
+﻿
+@model List<Comment>
 <section id="blog-comments" class="blog-comments section">
-
     <div class="container">
-
         <h4 class="comments-count">@Model.Count Comments</h4>
+
         @foreach (var item in Model)
         {
-            <div id="comment-1" class="comment">
+            <div id="comment-@item.CommentId" class="comment @(item.IsToxic ? "toxic-comment" : "")">
                 <div class="d-flex">
-                    <div class="comment-img"><img src="@item.AppUser.ImageUrl" alt=""></div>
+                    <div class="comment-img">
+                        <img src="@item.AppUser?.ImageUrl" alt="">
+                    </div>
                     <div>
-                        <h5><a href="">@item.AppUser.Name @item.AppUser.Surname</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                        <time datetime="2020-01-01">@item.CommentDate.ToString("dd-MMM-yy")</time>
-                        <p>
-                            @item.CommentDetail
-                        </p>
+                        <h5>
+                            <a href="">@item.AppUser?.Name @item.AppUser?.Surname</a>
+                            <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
+                        </h5>
+                        <time datetime="@item.CommentDate.ToString("yyyy-MM-dd")">
+                            @item.CommentDate.ToString("dd-MMM-yy")
+                        </time>
+
+                        @if (item.IsToxic)
+                        {
+                            <div class="alert alert-warning mt-2 mb-2">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <strong>Warning:</strong> This comment contains toxic content.
+                            </div>
+                        }
+
+                        <p>@item.CommentDetail</p>
                     </div>
                 </div>
             </div>
         }
-       
     </div>
-
 </section>
+
+<style>
+    .toxic-comment {
+        opacity: 0.8;
+        border-left: 3px solid #ffc107;
+        padding-left: 10px;
+    }
+</style>
