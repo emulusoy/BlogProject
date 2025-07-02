@@ -6,7 +6,7 @@ namespace BlogProject.PresentationLayer.ViewComponents.ArticleDetailViewComponen
     {
         public IViewComponentResult Invoke(int id)
         {
-            return View();
+            return View(); 
         }
     }
 }
