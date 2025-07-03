@@ -24,7 +24,8 @@ namespace BlogProject.PresentationLayer.Controllers
             var result=await _signInManager.PasswordSignInAsync(model.UserName, model.Password,true,false);
             if (result.Succeeded)
             {
-                return RedirectToAction("CreateArticle", "Author");
+                ViewBag.username = model.UserName; // Kullanıcı adını sakla
+                return RedirectToAction("Index", "Default");
             }
             else
             {
