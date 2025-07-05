@@ -2,14 +2,14 @@ Proje Hakkında
 EmuBlog, kullanıcıların makaleler paylaşabildiği ve diğer makalelere yorum yapabildiği bir platformdur.
 
 Anasayfa Görüntüsü
-https://github.com/user-attachments/assets/f28668fc-c04a-4d85-aac7-1d2b29180c78
+![anasayfablog](https://github.com/user-attachments/assets/2edec60f-ca7c-4221-a039-b65535add06e)
 
 Kullanıcılar makalelerini yayınlayıp diğer makalelere bakabilirler
 
 Sayfalama işlemi ve SQL'den çekilen makaleler mevcut
 
 Makale Detay Sayfası
-https://github.com/user-attachments/assets/e29ee25c-ec1a-46a4-a8c1-61a07583841d
+![defaultuyedegil](https://github.com/user-attachments/assets/1832d0d9-1d4f-48c5-a331-d7b7a6c78014)
 
 Makale yazarı listelenir ve hakkında bilgiler gösterilir
 
@@ -20,21 +20,23 @@ Alt tarafta kullanıcı yorumları bulunur
 Üye değilse yorum yapma alanı aktif değildir
 
 Üye Girişi Yapılmış Görünüm
-https://github.com/user-attachments/assets/061ce06e-b8b7-4fc8-9d2b-58436948e092
+![uye girisi yapmis](https://github.com/user-attachments/assets/d60957b9-4652-46be-be6c-be3fbac21ac9)
 
 Giriş yapan kullanıcının ismi üst tarafta gözükür
 
 Yorum yapma alanı aktif hale gelir
 
 Yazar Paneli
-https://github.com/user-attachments/assets/615352d3-f361-4f5a-aa16-53d33e9ec9a5
+![profil](https://github.com/user-attachments/assets/54785579-af44-492e-9dca-92af9381f869)
 
 Kullanıcı bilgilerini güncelleyebilir
 
 Şifre değiştirebilir
 
 Giriş ve Kayıt Sayfaları
-https://github.com/user-attachments/assets/794d1610-eba6-4017-8c38-e9473f978d38
-https://github.com/user-attachments/assets/23316766-ef9f-426f-a687-2ecd0f45c9f8
+![Screenshot 2025-07-05 140244](https://github.com/user-attachments/assets/a39cf633-9bf3-46c1-b9f3-f71021871b36)
+![Screenshot 2025-07-05 140237](https://github.com/user-attachments/assets/ceea7e76-f632-4d99-8b33-11104126d3ff)
+
+
 
 Kullanıcı girişi ve kayıt işlemleri yapılabilir
