@@ -26,6 +26,8 @@ Giriş yapan kullanıcının ismi üst tarafta gözükür
 
 Yorum yapma alanı aktif hale gelir
 
+Ayrica Projemde Toxic yorumlari kaldirma mevcut "Salak" gibi ibareler uyari verir bu metinler kendi istedigim ve olusturdugum metinlerden geliyor
+
 Yazar Paneli
 ![profil](https://github.com/user-attachments/assets/54785579-af44-492e-9dca-92af9381f869)
 
