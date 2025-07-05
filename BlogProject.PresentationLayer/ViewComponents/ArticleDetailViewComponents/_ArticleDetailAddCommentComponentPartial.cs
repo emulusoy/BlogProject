@@ -6,6 +6,7 @@ namespace BlogProject.PresentationLayer.ViewComponents.ArticleDetailViewComponen
     {
         public IViewComponentResult Invoke(int id)
         {
+            ViewBag.id = id;
             return View(); 
         }
     }
