@@ -31,7 +31,9 @@ builder.Services.AddScoped<BlogContext>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
     options.LoginPath = "/Login/UserLogin"; // Kullanýcý login deðilse buraya yönlendir
+    options.SlidingExpiration = true;
 });
 
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<BlogContext>();
@@ -56,6 +58,7 @@ app.UseAuthentication(); // Authentication must be before Authorization
 app.UseAuthorization();
 
 app.MapControllerRoute(
+
     name: "default",
     pattern: "{controller=Default}/{action=Index}/{id?}");
 

@@ -1,11 +1,13 @@
 ﻿using BlogProject.BusinessLayer.Abstract;
 using BlogProject.EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BlogProject.PresentationLayer.Controllers
 {
+    [Authorize]
     public class AuthorController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

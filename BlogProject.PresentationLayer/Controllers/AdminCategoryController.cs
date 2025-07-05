@@ -7,6 +7,7 @@ namespace BlogProject.PresentationLayer.Controllers
 {
     public class AdminCategoryController : Controller
     {
+
         private readonly ICategoryService _categoryService;
 
         public AdminCategoryController(ICategoryService categoryService)

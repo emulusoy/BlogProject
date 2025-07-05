@@ -1,10 +1,12 @@
 ﻿using System.Security.Claims;
 using BlogProject.DataAccessLayer.Context;
 using BlogProject.EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.PresentationLayer.Controllers
 {
+    [Authorize]
     public class CommentController : Controller
     {
         private readonly BlogContext _context;
