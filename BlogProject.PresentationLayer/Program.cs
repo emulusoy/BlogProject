@@ -29,6 +29,11 @@ builder.Services.AddScoped<IToxicityService, ToxicityManager>();
 
 builder.Services.AddScoped<BlogContext>();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/UserLogin"; // Kullanýcý login deðilse buraya yönlendir
+});
+
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<BlogContext>();
 var app = builder.Build();
 

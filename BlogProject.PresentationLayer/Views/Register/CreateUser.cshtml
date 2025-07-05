@@ -5,24 +5,51 @@
 
 <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<div class="container">
-    <br /><br />
-    <form method="post">
-        <label>Adınız</label>
-        <input type="text" asp-for="Name" class="form-control" />
-        <br />
-        <label>Soyadınız</label>
-        <input type="text" asp-for="Surname" class="form-control" />
-        <br />
-        <label>Kullanıcı Adınız</label>
-        <input type="text" asp-for="Username" class="form-control" />
-        <br />
-        <label>Email Adresi</label>
-        <input type="text" asp-for="Email" class="form-control" />
-        <br />
-        <label>Şifreniz</label>
-        <input type="text" asp-for="Password" class="form-control" />
-        <br />
-        <button class="btn btn-info">Olustur!</button>
-    </form>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px;">
+        <h3 class="text-center mb-4"><i class="bi bi-person-plus-fill"></i> Create Account</h3>
+
+        <form asp-action="UserRegister" asp-controller="Login" method="post">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Adınız</label>
+                <input asp-for="Name" class="form-control" placeholder="Adınızı girin" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Surname" class="form-label">Soyadınız</label>
+                <input asp-for="Surname" class="form-control" placeholder="Soyadınızı girin" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label">Kullanıcı Adınız</label>
+                <input asp-for="Username" class="form-control" placeholder="Kullanıcı adınızı girin" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email Adresi</label>
+                <input asp-for="Email" class="form-control" placeholder="ornek@email.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Şifreniz</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Şifrenizi girin" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success">Hesap Oluştur</button>
+            </div>
+
+            <div class="text-center mt-3">
+                <span>Zaten hesabın var mı?</span>
+                <a href="/Login/UserLogin" class="btn btn-outline-secondary btn-sm ms-2">Giriş Yap</a>
+            </div>
+        </form>
+    </div>
 </div>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
